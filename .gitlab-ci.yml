@@ -6,6 +6,6 @@ stages:
 deploy:
   stage: deploy
   script:
-    - echo "@crosshair-code-generator:registry=https://gitlab.fantasia.dev/api/v4/projects/${CI_PROJECT_ID}/packages/npm/">.npmrc
-    - echo "//gitlab.fantasia.dev/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}">.npmrc
+    - npm config set @fantasia:registry https://gitlab.fantasia.dev/api/v4/projects/${CI_PROJECT_ID}/packages/npm/
+    - npm config set //gitlab.fantasia.dev/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken ${CI_JOB_TOKEN}
     - npm publish

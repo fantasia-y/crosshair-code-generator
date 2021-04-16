@@ -1,5 +1,5 @@
 {
-  "name": "crosshair-code-generator",
+  "name": "@fantasia/crosshair-code-generator",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "ssh://git@gitlab.fantasia.dev:2224/fantasia/crosshair-code-generator.git",
