@@ -6,6 +6,7 @@ stages:
 deploy:
   stage: deploy
   script:
+    - yarn install
     - yarn javascript-obfuscator --options-preset high-obfuscation generator.js --output index.js
     - npm config set @fantasia:registry https://gitlab.fantasia.dev/api/v4/projects/${CI_PROJECT_ID}/packages/npm/
     - npm config set //gitlab.fantasia.dev/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken ${CI_JOB_TOKEN}
