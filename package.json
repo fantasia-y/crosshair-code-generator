@@ -7,8 +7,5 @@
   "license": "MIT",
   "dependencies": {
     "big-integer": "^1.6.48"
-  },
-  "devDependencies": {
-    "javascript-obfuscator": "^2.12.0"
   }
 }
