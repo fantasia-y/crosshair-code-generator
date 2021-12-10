@@ -2,3 +2,5 @@
 /.idea
 yarn.lock
 node_modules
+build
+/build

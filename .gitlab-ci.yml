@@ -7,5 +7,8 @@ deploy:
   stage: deploy
   script:
     - echo _auth=${NPM_TOKEN} >> .npmrc
+    - echo "unsafe-perm = true" >> .npmrc
+    - echo always-auth=true >> .npmrc
     - yarn install
+    - yarn build
     - npm publish
