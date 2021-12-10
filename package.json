@@ -1,9 +1,9 @@
 {
-  "name": "@fantasia/crosshair-code-generator",
+  "name": "crosshair-code-generator",
   "version": "1.0.1",
   "main": "index.js",
-  "repository": "ssh://git@gitlab.fantasia.dev:2224/fantasia/crosshair-code-generator.git",
-  "author": "Gordon <therealfantasia@gmx.de>",
+  "repository": "https://gitlab.fantasia.dev/fantasia/crosshair-code-generator",
+  "author": "fantasiaa <therealfantasia@gmx.de>",
   "license": "MIT",
   "dependencies": {
     "big-integer": "^1.6.48"
