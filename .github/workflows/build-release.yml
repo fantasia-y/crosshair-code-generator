@@ -5,19 +5,7 @@ on:
       - master
 
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 16
-      - run: npm ci
-      - run: npm run build
-
   release:
-    needs: build
     name: Release
     runs-on: ubuntu-latest
     steps:
@@ -31,18 +19,12 @@ jobs:
       - name: Print release output
         if: ${{ steps.release.outputs.released == 'true' }}
         run: echo Release ID ${{ steps.release.outputs.release_id }}
-
-  publish-npm:
-    needs: release
-    name: Publish
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: npm ci
+      - run: npm run build
       - name: Publish
         if: ${{ steps.release.outputs.released == 'true' }}
         run: npm publish
