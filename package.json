@@ -1,6 +1,6 @@
 {
   "name": "crosshair-code-generator",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "main": "build/index.js",
   "repository": "https://gitlab.fantasia.dev/fantasia/crosshair-code-generator",
   "author": "fantasiaa <therealfantasia@gmx.de>",
