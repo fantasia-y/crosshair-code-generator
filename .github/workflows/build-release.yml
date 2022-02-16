@@ -1,0 +1,32 @@
+name: Release and build
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: npm build
+
+  release:
+    needs: build
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Release
+        uses: justincy/github-action-npm-release@v1.2.0
+        id: release
+      - name: Print release output
+        if: ${{ steps.release.outputs.released == 'true' }}
+        run: echo Release ID ${{ steps.release.outputs.release_id }}
